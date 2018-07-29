@@ -1,9 +1,9 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sample from './Components/sample';
+import Sample from './js/Components/sample';
 
-import './script';
+import './js/script';
 
 
 

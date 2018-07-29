@@ -8,7 +8,7 @@ const paths = {
 };
 
 module.exports = {
-    entry: path.join(paths.JS, 'index.js'),
+    entry: path.join(paths.SRC, 'index.js'),
     output: {
         path: paths.DIST,
         filename: 'index.js'
