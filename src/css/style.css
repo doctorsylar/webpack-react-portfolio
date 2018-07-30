@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    line-height: 24px;
+}
+
+/* COMMONS */
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+body > * {
+    padding: 0 10%;
+}
+body > *:nth-child(odd) {
+    background-color: #111111;
+    color: #ffffff;
+}
+body > *:nth-child(even) {
+    background-color: #ffffff;
+    color: #111111;
+}
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;
+}
+
+/* HEADER */
+.head .head-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 20px 60px;
+}
+.head .head-header .head-logo {
+    font-size: 22px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+.head .head-header .head-logo a:hover {
+    border-bottom: none;
+    color: tomato;
+}
+.head .head-header .toggler {
+    display: none;
+}
+.head .head-header .header-menu ul {
+    list-style: none;
+}
+.head .head-header .header-menu ul li {
+    margin-right: 20px;
+}
+.head .head-header .header-menu ul li a {
+    text-transform: uppercase;
+}
+.head .head-header a {
+    transition: all .5s;
+    padding: 5px 2px 12px;
+}
+.head .head-header a:hover {
+    color: crimson;
+    border-bottom: 4px solid tomato;
+}
+.head .head-header .header-menu ul li:last-child {
+    margin-right: 0;
+}
+/* HEAD-CONTAINER */
+.head .head-container {
+    padding: 350px 0 161px;
+}
+@keyframes flashing {
+    0% {
+        color: #ffffff;
+    }
+    100% {
+        color: #FF634780;
+    }
+}
+.head .head-container > h1,
+.head .head-container > p {
+    animation-name: flashing;
+    animation: flashing 3s linear 1s infinite alternate;
+    margin-top: 30px;
+}
+.head .head-container .scroll-down {
+    margin-top: 150px;
+}
+.head .head-container .scroll-down p {
+    margin-bottom: 30px;
+}
+.head .head-container .scroll-down a {
+    padding: 22px 28px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transition: all .3s;
+}
+.head .head-container .scroll-down a:hover {
+    border-color: #111;: ;
+    background-color: #ffffff;
+    color: #111;
+}
+/* ABOUT */
+
+
+
+
+
+/* FLEXIBILITY */
+/* laptop */
+@media screen and (max-width: 1200px) {
+    body > * {
+        padding: 0 4%;
+    }
+    /* HEADER */
+    .head .head-header {
+        padding: 20px 40px;
+    }
+    .head .head-header .header-menu ul li {
+        margin-right: 10px;
+    }
+    /* HEAD CONTAINER */
+    .head .head-container {
+        padding: 250px 0 120px;
+    }
+}
+/* tablet */
+@media screen and (max-width: 992px) {
+    /* HEAD */
+    .head .head-header .toggler {
+        display: block;
+        font-size: 22px;
+        padding-top: 16px;
+        cursor: pointer;
+    }
+    .head .head-header .header-menu {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 100%;
+        display: none;
+    }
+    .head .head-header .header-menu.shown {
+        display: block;
+    }
+    .head .head-header .header-menu ul {
+        margin: 2px auto;
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .head .head-header .header-menu ul .menu-item,
+    .head .head-header .header-menu ul .menu-item a{
+        display: block;
+        margin-right: 0;
+    }
+    .head .head-header .header-menu ul .menu-item a {
+        margin: -1px auto;
+        border-top: 2px solid tomato;
+        border-bottom: 2px solid tomato;
+    }
+    .head .head-header .header-menu ul .menu-item a:hover {
+        background-color: #333333;
+    }
+    .head .head-container {
+        padding: 300px auto;
+    }
+    /* HEAD CONTAINER */
+    .head .head-container {
+        padding: 200px 0 90px;
+    }
+
+}
+/* note */
+@media screen and (max-width: 768px) {
+    a:hover {
+        color: #ffffff;
+    }
+    .head .head-header {
+        padding: 15px 30px;
+    }
+
+    /* HEAD CONTAINER */
+    .head .head-container {
+        padding: 150px 0 70px;
+    }
+
+}
+/* smart phone */
+@media screen and (max-width: 576px) {
+    /* HEAD */
+    .head .head-header {
+        padding: 10px 20px;
+    }
+    .head .head-header .head-logo {
+        text-align: left;
+    }
+    /* HEAD CONTAINER */
+    .head .head-container {
+        padding: 100px 0 40px;
+    }
+
+}

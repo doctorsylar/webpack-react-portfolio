@@ -1,3 +1,11 @@
 'use strict';
+import 'jquery';
 
-document.getElementById('pureJs').innerText = 'Import works';
+// PureJS
+let menuToggler = document.getElementById('menu-toggler');
+menuToggler.onclick = function () {
+    let menuCont = document.querySelector('nav.header-menu');
+    menuCont.classList.toggle('shown');
+};
+
+// jQuery
