@@ -18,6 +18,7 @@ a {
 body > * {
     padding: 0 10%;
     height: 100vh;
+    overflow: hidden;
 }
 body > *:nth-child(odd) {
     background-color: #111111;
@@ -127,6 +128,33 @@ h1 {
 .about h1 {
     color: tomato;
 }
+/* EDuCATION */
+#education {
+    padding-top: 20px;
+}
+#education .edu-container {
+    justify-content: space-between;
+}
+#education .edu-container > div {
+    width: 45%;
+    flex-direction: column;
+
+}
+#education .pics-container img {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+#education .pics-container img.photo {
+    width: 100%;
+}
+#education .edu-container .text-container div .edu-information {
+    text-align: left;
+}
+#education .edu-container .text-container span {
+    display: block;
+    font-size: 18px;
+}
+
 
 
 
