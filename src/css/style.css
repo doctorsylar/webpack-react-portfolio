@@ -5,8 +5,9 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Amatic SC', cursive;
     line-height: 24px;
+    font-size: 24px;
 }
 
 /* COMMONS */
@@ -16,6 +17,7 @@ a {
 }
 body > * {
     padding: 0 10%;
+    height: 100vh;
 }
 body > *:nth-child(odd) {
     background-color: #111111;
@@ -24,6 +26,9 @@ body > *:nth-child(odd) {
 body > *:nth-child(even) {
     background-color: #ffffff;
     color: #111111;
+}
+h1 {
+    line-height: 34px;
 }
 .flex {
     display: flex;
@@ -35,19 +40,23 @@ body > *:nth-child(even) {
 }
 
 /* HEADER */
+.head {
+    position: relative;
+}
 .head .head-header {
     grid-template-columns: auto auto;
     justify-content: space-between;
     padding: 20px 60px;
 }
 .head .head-header .head-logo {
-    font-size: 22px;
     padding-top: 15px;
     font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 2px;
 }
 .head .head-header .head-logo a:hover {
     border-bottom: none;
-    color: tomato;
+    color: crimson;
 }
 .head .head-header .toggler {
     display: none;
@@ -66,7 +75,7 @@ body > *:nth-child(even) {
     padding: 5px 2px 12px;
 }
 .head .head-header a:hover {
-    color: crimson;
+    color: tomato;
     border-bottom: 4px solid tomato;
 }
 .head .head-header .header-menu ul li:last-child {
@@ -74,7 +83,7 @@ body > *:nth-child(even) {
 }
 /* HEAD-CONTAINER */
 .head .head-container {
-    padding: 350px 0 161px;
+    padding: 300px 0 0px;
 }
 @keyframes flashing {
     0% {
@@ -91,7 +100,9 @@ body > *:nth-child(even) {
     margin-top: 30px;
 }
 .head .head-container .scroll-down {
-    margin-top: 150px;
+    position: absolute;
+    bottom: 100px;
+    left: calc(50% - 47px);
 }
 .head .head-container .scroll-down p {
     margin-bottom: 30px;
@@ -108,8 +119,14 @@ body > *:nth-child(even) {
     color: #111;
 }
 /* ABOUT */
-
-
+.about {
+    background: url("../img/under-const.png") no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+}
+.about h1 {
+    color: tomato;
+}
 
 
 
@@ -195,10 +212,10 @@ body > *:nth-child(even) {
 @media screen and (max-width: 576px) {
     /* HEAD */
     .head .head-header {
-        padding: 10px 20px;
+        padding: 10px 10px;
     }
     .head .head-header .head-logo {
-        text-align: left;
+        letter-spacing: 0;
     }
     /* HEAD CONTAINER */
     .head .head-container {
