@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Permanent+Marker" rel="stylesheet">
-    <title>React</title>
+    <title>AI-portfolio</title>
 </head>
-<body>
-<!--<div id="react"></div>-->
-<!--Hey, mate-->
-
 <header class="head" id="head">
     <header class="head-header grid">
         <div class="head-logo">
-            <a href="#head" class="inner-link">
+            <a href="#head" class="anchor-link">
                 AI-development
             </a>
         </div>
@@ -24,22 +20,22 @@
         <nav class="header-menu">
             <ul class="flex">
                 <li class="menu-item">
-                    <a href="#head">Домой</a>
+                    <a href="#head" class="anchor-link">Домой</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#about">Обо мне</a>
+                    <a href="#about" class="anchor-link">Обо мне</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#education">Образование</a>
+                    <a href="#education" class="anchor-link">Образование</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#skills">Навыки</a>
+                    <a href="#skills" class="anchor-link">Навыки</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#portfolio">Портфолио</a>
+                    <a href="#portfolio" class="anchor-link">Портфолио</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#contact">Контакты</a>
+                    <a href="#contact" class="anchor-link">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -48,8 +44,8 @@
         <h1>Добро пожаловать на мой личный веб-сайт</h1>
         <p>Меня зовут <i>Андрей</i> и я <strong>frontend разработчик</strong> из Санкт-Петербурга</p>
         <div class="scroll-down">
-            <p>Промотать вниз</p>
-            <a href="#about"><i class="fa fa-angle-down"></i></a>
+            <p><a href="#about" class="anchor-link">Промотать вниз</a></p>
+            <a href="#about" class="anchor-link"><i class="fa fa-angle-down"></i></a>
         </div>
     </div>
 </header>
@@ -60,10 +56,7 @@
 <div id="education">
     <h2>Образование</h2>
     <div class="edu-container flex">
-        <div class="pics-container flex">
-            <div>
-                <img src="./img/itmo_logo.png" alt="itmo logo">
-            </div>
+        <div class="pics-container">
             <div>
                 <img src="img/itmo1.png" alt="itmo university" class="photo">
             </div>
@@ -72,19 +65,25 @@
             <h3>Университет ИТМО</h3>
             <div class="edu-bachelor">
                 <span class="edu-button button-bachelor">Bachelor</span>
-                <div class="edu-information">
-
+                <div class="edu-information bachelor-information">
+                    Год окончания: 2015 <br />
+                    Факультет: Точной Механики и Технологий <br />
+                    Специальность: Информатика и вычислительная техника <br />
                 </div>
             </div>
             <div class="edu-master">
                 <span class="edu-button button-master">Master</span>
-                <div class="edu-information">
-
+                <div class="edu-information master-information">
+                    Год окончания: 2017 <br />
+                    Факультет: Систем Управления и Робототехники <br />
+                    Специальность: Информатика и вычислительная техника <br />
                 </div>
             </div>
         </div>
     </div>
-
+</div>
+<div id="skills">
+    <h2>Навыки и технологии</h2>
 </div>
 </body>
 </html>

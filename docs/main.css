@@ -51,7 +51,7 @@ h1 {
 }
 .head .head-header {
     grid-template-columns: auto auto;
-    justify-content: space-between;
+    justify-content: stretch;
     padding: 20px 60px;
 }
 .head .head-header .head-logo {
@@ -59,6 +59,7 @@ h1 {
     font-weight: bold;
     font-family: 'Permanent Marker', cursive;
     letter-spacing: 2px;
+    text-align: left;
 }
 .head .head-header .head-logo a:hover {
     border-bottom: none;
@@ -66,14 +67,16 @@ h1 {
 }
 .head .head-header .toggler {
     display: none;
+    text-align: right;
 }
-.head .head-header .header-menu ul {
+.head .head-header nav ul {
     list-style: none;
+    justify-content: right;
 }
-.head .head-header .header-menu ul li {
+.head .head-header nav ul li {
     margin-right: 20px;
 }
-.head .head-header .header-menu ul li a {
+.head .head-header nav ul li a {
     text-transform: uppercase;
 }
 .head .head-header a {
@@ -84,13 +87,14 @@ h1 {
     color: tomato;
     border-bottom: 4px solid tomato;
 }
-.head .head-header .header-menu ul li:last-child {
+.head .head-header nav ul li:last-child {
     margin-right: 0;
 }
 
 /* HEAD-CONTAINER */
 .head .head-container {
-    padding: 300px 0 0;
+    height: 100%;
+    padding: 20vh 0 0;
 }
 @keyframes flashing {
     0% {
@@ -114,23 +118,17 @@ h1 {
 .head .head-container .scroll-down p {
     margin-bottom: 30px;
 }
-.head .head-container .scroll-down a {
+.head .head-container .scroll-down > a {
     padding: 22px 28px;
     border: 1px solid #ffffff;
     border-radius: 50%;
     transition: all .3s;
 }
-.head .head-container .scroll-down a:hover {
+.head .head-container .scroll-down > a:hover {
     border-color: #111;
     background-color: #ffffff;
     color: #111;
 }
-
-
-
-
-
-
 
 /* ABOUT */
 .about {
@@ -165,8 +163,9 @@ h1 {
 }
 #education .edu-container .text-container span {
     display: block;
-    font-size: 18px;
+    font-size: 24px;
     border-radius: 20px;
+    cursor: pointer;
 }
 #education .edu-container .text-container span.button-bachelor {
     background-color: tomato;
@@ -174,13 +173,23 @@ h1 {
 #education .edu-container .text-container span.button-master {
     background-color: crimson;
 }
-#education .edu-container .text-containe .edu-information {
-    height: 0;
-    width: 80%;
-    margin: 0 auto;
+#education .edu-container .text-container .edu-information {
+    width: 90%;
+    padding: 10px 14px;
+    margin: 0 auto 5px;
+    display: none;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+
 }
-
-
+#education .edu-container .text-container .edu-information[class~=bachelor-information] {
+    background-color: tomato;
+}
+#education .edu-container .text-container .edu-information[class~=master-information] {
+    background-color: crimson;
+}
 
 
 /* FLEXIBILITY */
@@ -193,7 +202,7 @@ h1 {
     .head .head-header {
         padding: 20px 40px;
     }
-    .head .head-header .header-menu ul li {
+    .head .head-header nav ul li {
         margin-right: 10px;
     }
     /* HEAD CONTAINER */
@@ -210,31 +219,31 @@ h1 {
         padding-top: 16px;
         cursor: pointer;
     }
-    .head .head-header .header-menu {
+    .head .head-header nav {
         grid-column-start: 1;
         grid-column-end: 3;
         width: 100%;
         display: none;
     }
-    .head .head-header .header-menu.shown {
+    .head .head-header nav[class~=shown] {
         display: block;
     }
-    .head .head-header .header-menu ul {
+    .head .head-header nav ul {
         margin: 2px auto;
         flex-direction: column;
         padding-left: 0;
     }
-    .head .head-header .header-menu ul .menu-item,
-    .head .head-header .header-menu ul .menu-item a{
+    .head .head-header nav ul .menu-item,
+    .head .head-header nav ul .menu-item a{
         display: block;
         margin-right: 0;
     }
-    .head .head-header .header-menu ul .menu-item a {
+    .head .head-header nav ul .menu-item a {
         margin: -1px auto;
         border-top: 2px solid tomato;
         border-bottom: 2px solid tomato;
     }
-    .head .head-header .header-menu ul .menu-item a:hover {
+    .head .head-header nav ul .menu-item a:hover {
         background-color: #333333;
     }
     .head .head-container {
@@ -243,6 +252,13 @@ h1 {
     /* HEAD CONTAINER */
     .head .head-container {
         padding: 200px 0 90px;
+    }
+    /* EDUCATION */
+    #education .edu-container {
+        flex-direction: column;
+    }
+    #education .edu-container > div {
+        width: 100%;
     }
 
 }
