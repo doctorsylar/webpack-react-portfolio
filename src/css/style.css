@@ -1,3 +1,8 @@
+body {
+    margin: 100px 200px;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -82,9 +87,10 @@ h1 {
 .head .head-header .header-menu ul li:last-child {
     margin-right: 0;
 }
+
 /* HEAD-CONTAINER */
 .head .head-container {
-    padding: 300px 0 0px;
+    padding: 300px 0 0;
 }
 @keyframes flashing {
     0% {
@@ -115,10 +121,17 @@ h1 {
     transition: all .3s;
 }
 .head .head-container .scroll-down a:hover {
-    border-color: #111;: ;
+    border-color: #111;
     background-color: #ffffff;
     color: #111;
 }
+
+
+
+
+
+
+
 /* ABOUT */
 .about {
     background: url("../img/under-const.png") no-repeat;
