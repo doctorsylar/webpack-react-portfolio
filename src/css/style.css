@@ -153,6 +153,18 @@ h1 {
 #education .edu-container .text-container span {
     display: block;
     font-size: 18px;
+    border-radius: 20px;
+}
+#education .edu-container .text-container span.button-bachelor {
+    background-color: tomato;
+}
+#education .edu-container .text-container span.button-master {
+    background-color: crimson;
+}
+#education .edu-container .text-containe .edu-information {
+    height: 0;
+    width: 80%;
+    margin: 0 auto;
 }
 
 
