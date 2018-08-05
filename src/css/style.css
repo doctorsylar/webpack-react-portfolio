@@ -42,7 +42,7 @@ h1 {
 .grid {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 30px;
+    grid-gap: 6%;
 }
 
 /* HEADER */
@@ -190,6 +190,35 @@ h1 {
 #education .edu-container .text-container .edu-information[class~=master-information] {
     background-color: crimson;
 }
+/* SKILLS */
+#skills {
+    height: auto;
+}
+#skills #skills-container .skills-react-container .skills-buttons-container {
+    margin-bottom: 20px;
+}
+#skills #skills-container .skills-react-container span {
+    background-color: #909090;
+    padding: 3px 14px;
+    margin-right: 12px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#skills #skills-container .skills-react-container span[class~=active] {
+    background-color: #505050;
+}
+#skills #skills-container .skills-react-container span:hover {
+    background-color: #757575;
+}
+#skills #skills-container .skills .skill-item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+
 
 
 /* FLEXIBILITY */

@@ -7,13 +7,18 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'docs')
     },
+    devtool: "source-map ",
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
+                include: [
+                    path.resolve(__dirname, "src"),
+                ],
+                loader: 'babel-loader',
+                query: {
+                    plugins: ['transform-class-properties'],
+                    presets: ['env', 'react'],
                 }
             },
             {
