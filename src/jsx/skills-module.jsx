@@ -78,8 +78,8 @@ class LimitedSkillsModule extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            categories: ['All', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
-            chosenCategories: ['All', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
+            categories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
+            chosenCategories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
             list: this.props.list
         };
         // this.reRenderModule.bind(this);
@@ -126,7 +126,6 @@ class LimitedSkillsModule extends Component {
 
     render() {
         let filteredList = [];
-        console.log(typeof this.state.chosenCategories);
         this.state.list.forEach((tech) => {
             let pass = false;
             for (let category of tech.categories) {

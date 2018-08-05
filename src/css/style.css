@@ -42,7 +42,8 @@ h1 {
 .grid {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 6%;
+    grid-column-gap: 20px;
+    grid-row-gap: 6%;
 }
 
 /* HEADER */
@@ -130,15 +131,6 @@ h1 {
     color: #111;
 }
 
-/* ABOUT */
-.about {
-    background: url("../img/under-const.png") no-repeat;
-    background-size: cover;
-    padding-top: 80px;
-}
-.about h1 {
-    color: tomato;
-}
 /* EDuCATION */
 #education {
     padding-top: 20px;
@@ -166,6 +158,9 @@ h1 {
     font-size: 24px;
     border-radius: 20px;
     cursor: pointer;
+}
+#education .edu-container .text-container span:last-child {
+    display: none;
 }
 #education .edu-container .text-container span.button-bachelor {
     background-color: tomato;
@@ -212,8 +207,17 @@ h1 {
 #skills #skills-container .skills-react-container span:hover {
     background-color: #757575;
 }
+#skills #skills-container .skills {
+    margin-top: 30px;
+    grid-template-columns: 17% 17% 17% 17% 17%;
+    justify-content: space-around;
+    grid-row-gap: 30px;
+}
+#skills #skills-container .skills .skill-item {
+
+}
 #skills #skills-container .skills .skill-item img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 20px;
 }
 
