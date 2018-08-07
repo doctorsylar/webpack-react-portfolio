@@ -23,11 +23,17 @@ $(function () {
         $('body,html').animate({scrollTop: top}, 400);
     });
     $('.edu-container .text-container .edu-button').click(function (event) {
-        let clickedName = event.target.innerText.toLowerCase();
-        let educations = $('.edu-information');
-        let computedClassName = clickedName + '-information';
-        $('.edu-container .text-container .edu-information[class~=' + computedClassName + ']').slideToggle('500ms');
+        let clicked = event.target;
+        let clickedName = clicked.classList[0];
+        let computedTextContainerName = clickedName + '-information';
+        let computedOpenButtonName = clickedName + '-button-open';
+        let computedCloseButtonName = clickedName + '-button-close';
+        console.log(computedOpenButtonName);
+        $('.edu-container .text-container .edu-information[class~=' + computedTextContainerName + ']').slideToggle('100ms');
+        $('.edu-container .text-container .edu-button[class~=' + computedOpenButtonName + ']').toggleClass('curved-bottom');
+        $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms');
     });
+
     $(window).scroll(function () {
         let homeButton = $('#home');
         let scrollPos = window.pageYOffset;

@@ -13,6 +13,9 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
+    background: url(img/prog-bg.png) no-repeat;
+    background-size: auto;
+    overflow-y: scroll;
 }
 
 /* COMMONS */
@@ -22,14 +25,14 @@ a {
 }
 body > * {
     padding: 0 10%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
-body > *:nth-child(odd) {
+body > *:nth-child(even) {
     background-color: #111111;
     color: #ffffff;
 }
-body > *:nth-child(even) {
+body > *:nth-child(odd) {
     background-color: #ffffff;
     color: #111111;
 }
@@ -47,13 +50,18 @@ h1 {
 }
 
 /* HEADER */
+body > *:first-child {
+    background-color: transparent;
+}
 .head {
     position: relative;
+    padding: 0;
 }
 .head .head-header {
     grid-template-columns: auto auto;
     justify-content: stretch;
-    padding: 20px 60px;
+    padding: 20px calc(10% + 60px);
+    background-color: #111111;
 }
 .head .head-header .head-logo {
     padding-top: 15px;
@@ -73,6 +81,7 @@ h1 {
 .head .head-header nav ul {
     list-style: none;
     justify-content: right;
+    margin: 20px 0;
 }
 .head .head-header nav ul li {
     margin-right: 20px;
@@ -137,53 +146,73 @@ h1 {
 }
 #education .edu-container {
     justify-content: space-between;
+    flex-direction: column;
 }
 #education .edu-container > div {
-    width: 45%;
+    width: 55%;
     flex-direction: column;
+    margin: 0 auto;
 
 }
 #education .pics-container img {
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 #education .pics-container img.photo {
     width: 100%;
 }
-#education .edu-container .text-container div .edu-information {
-    text-align: left;
+#education .edu-container .text-container h4 {
+    display: block;
+    margin-bottom: 0;
+    background-color: lemonchiffon;
+    color: #111111;
 }
-#education .edu-container .text-container span {
+#education .edu-container .text-container .edu-button {
     display: block;
     font-size: 24px;
-    border-radius: 20px;
     cursor: pointer;
+    padding: 2px 0;
 }
-#education .edu-container .text-container span:last-child {
-    display: none;
+#education .edu-container .text-container *[class~=curved-top] {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
 }
-#education .edu-container .text-container span.button-bachelor {
+#education .edu-container .text-container *[class~=curved-bottom] {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+#education .edu-container .text-container *[class~=curved-both] {
+    border-radius: 50px
+
+}
+#education .edu-container .text-container .bachelor {
     background-color: tomato;
 }
-#education .edu-container .text-container span.button-master {
+#education .edu-container .text-container .master {
     background-color: crimson;
+    color: #ffffff;
+}
+#education .edu-container .text-container div.edu-button {
+    display: none;
+    font-size: 24px;
+    width: 100%;
+    cursor: pointer;
 }
 #education .edu-container .text-container .edu-information {
     width: 90%;
     padding: 10px 14px;
-    margin: 0 auto 5px;
+    margin: 0 auto;
     display: none;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    -webkit-border-bottom-right-radius: 30px;
-    -webkit-border-bottom-left-radius: 30px;
-
+    text-align: left;
 }
 #education .edu-container .text-container .edu-information[class~=bachelor-information] {
     background-color: tomato;
 }
 #education .edu-container .text-container .edu-information[class~=master-information] {
     background-color: crimson;
+    color: #ffffff;
 }
 /* SKILLS */
 #skills {
@@ -225,10 +254,17 @@ h1 {
 
 /* CONTACTS */
 #contacts {
-    height: 250px;
-    position: relative;
+
 }
-#contacts .copyright {
+
+/* FOOTER */
+footer {
+    min-height: 0;
+    height: 60px;
+    position: relative;
+
+}
+footer .copyright {
     position: absolute;
     bottom: 20px;
     left: calc(50% - 72px)
@@ -237,17 +273,17 @@ h1 {
 #home {
     display: none;
     position: fixed;
-    padding: 12px 16px;
-    bottom: 15px;
-    right: 15px;
+    padding: 10px 16px;
+    bottom: 10px;
+    right: 10px;
     background-color: #ffffff;
     color: #222222;
     border: 2px solid tomato;
     border-radius: 10%;
-    height: auto;
+    min-height: 0;
 }
 #home:hover {
-    background-color: #FF634770;
+    background-color: crimson;
     color: #ffffff;
 }
 
