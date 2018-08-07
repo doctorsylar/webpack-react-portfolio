@@ -13,9 +13,8 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    background: url(img/prog-bg.png) no-repeat;
-    background-size: auto;
-    overflow-y: scroll;
+    background: url(img/prog-bg-1.png) no-repeat;
+    background-size: contain;
 }
 
 /* COMMONS */
@@ -61,7 +60,7 @@ body > *:first-child {
     grid-template-columns: auto auto;
     justify-content: stretch;
     padding: 20px calc(10% + 60px);
-    background-color: #111111;
+    /*background-color: #111111;*/
 }
 .head .head-header .head-logo {
     padding-top: 15px;
@@ -111,13 +110,13 @@ body > *:first-child {
         color: #ffffff;
     }
     100% {
-        color: #FF634780;
+        color: tomato;
     }
 }
 .head .head-container > h1,
 .head .head-container > p {
     animation-name: flashing;
-    animation: flashing 3s linear 1s infinite alternate;
+    animation: flashing 3s cubic-bezier(.6,-0.28,.74,.05) 1s infinite alternate;
     margin-top: 30px;
 }
 .head .head-container .scroll-down {
