@@ -13,7 +13,7 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    background: url("../img/prog-bg-1.png") no-repeat;
+    background: url("../img/prog-bg-1.png") repeat-y;
     background-size: contain;
 }
 
@@ -76,6 +76,7 @@ body > *:first-child {
 .head .head-header .toggler {
     display: none;
     text-align: right;
+    color: #ffffff;
 }
 .head .head-header nav ul {
     list-style: none;
@@ -220,11 +221,13 @@ body > *:first-child {
 }
 #skills #skills-container .skills-react-container .skills-buttons-container {
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #skills #skills-container .skills-react-container span {
     background-color: #909090;
     padding: 3px 14px;
-    margin-right: 12px;
+    margin: 5px 12px 5px 0;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -385,6 +388,20 @@ footer .copyright {
     /* HEAD CONTAINER */
     .head .head-container {
         padding: 100px 0 40px;
+    }
+    /* EDUCATION */
+    #education .edu-container .text-container .edu-information {
+        width: 80%;
+    }
+    /* SKILLS */
+    #skills #skills-container .skills {
+        grid-template-columns: 20% 20% 20% 20%;
+        justify-content: space-around;
+    }
+
+    /* HOME BUTTON */
+    #home {
+        display: none !important;
     }
 
 }

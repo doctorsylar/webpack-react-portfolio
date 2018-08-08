@@ -65,7 +65,7 @@ class CategoryButtons extends Component {
         });
 
         return (
-            <div className='skills-buttons-container'>
+            <div className='skills-buttons-container flex'>
                 { buttons }
             </div>
         );
