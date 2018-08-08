@@ -60,7 +60,6 @@ body > *:first-child {
     grid-template-columns: auto auto;
     justify-content: stretch;
     padding: 20px calc(10% + 60px);
-    /*background-color: #111111;*/
 }
 .head .head-header .head-logo {
     padding-top: 15px;
@@ -218,6 +217,16 @@ body > *:first-child {
 #skills {
     height: auto;
     padding-bottom: 70px;
+}
+#skills #skills-container .skills-react-container .skill-description {
+    width: 60%;
+    margin: 0 auto;
+}
+#skills #skills-container .skills-react-container .skill-description[class~=skill-description-hidden] {
+    display: none;
+}
+#skills #skills-container .skills-react-container .skill-description img {
+    width: 20%;
 }
 #skills #skills-container .skills-react-container .skills-buttons-container {
     margin-bottom: 20px;
@@ -396,7 +405,6 @@ footer .copyright {
     /* SKILLS */
     #skills #skills-container .skills {
         grid-template-columns: 20% 20% 20% 20%;
-        justify-content: space-around;
     }
 
     /* HOME BUTTON */

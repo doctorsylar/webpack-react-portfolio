@@ -2,40 +2,38 @@ import React, {Component} from 'react';
 
 
 
-
-function SkillItem (props) {
-    return (
-        <div className='skill-item'>
-            <img src={props.pictureUrl} alt={props.name} key={props.name} title={props.name}/>
-        </div>
-    )
-}
-
-function SkillsModule(props) {
-    let skills = [];
-    props.skills.forEach((skill) => {
-        skills.push(
-            <SkillItem pictureUrl={skill.pictureUrl}
-                       name={skill.name}
-                       key={skill.name}/>
-        );
-    });
-    return (
-        <div className='skills grid'>
-            { skills }
-        </div>
-    );
+function Description (props) {
+    // if (props.show === true) {
+        return (
+            <div className={
+                props.show ? 'skill-description flex' : 'skill-description skill-description-hidden'
+            }
+            >
+                <img src={props.technology.pictureUrl}
+                     alt={props.technology.name}
+                     key={props.technology.name}
+                     title={props.technology.name} />
+                <div className="skill-description-text">
+                    <h4>{ props.technology.name }</h4>
+                    <p>{ props.technology.description }</p>
+                </div>
+            </div>
+        )
+    // }
+    // else {
+    //     return (
+    //         <div className="blank"></div>
+    //     )
+    // }
 }
 
 class CategoryButtons extends Component {
     constructor(props) {
         super(props);
-        // this.buttonClickHandler.bind(this);
     }
 
     buttonClickHandler = (event) => {
         this.props.rerender(event.target.innerText);
-        // console.log(this.props.chosenCategories);
     };
 
 
@@ -70,9 +68,55 @@ class CategoryButtons extends Component {
             </div>
         );
     }
-
-
 }
+
+class SkillItem extends Component {
+    descriptionHandler = (event) => {
+        this.props.descriptionHandler(event.target.title);
+    };
+
+    render() {
+        return (
+            <div className='skill-item'>
+                <img src={this.props.pictureUrl}
+                     alt={this.props.name}
+                     key={this.props.name}
+                     title={this.props.name}
+                     onClick={this.descriptionHandler}
+                />
+            </div>
+        );
+    }
+}
+
+class SkillsModule extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    descriptionHandler = (tech) => {
+        this.props.descriptionHandler(tech);
+    };
+
+    render() {
+        let skills = [];
+        this.props.skills.forEach((skill) => {
+            skills.push(
+                <SkillItem pictureUrl={skill.pictureUrl}
+                           name={skill.name}
+                           key={skill.name}
+                           descriptionHandler={this.props.descriptionRenderer}
+                />
+            );
+        });
+        return (
+            <div className='skills grid'>
+                { skills }
+            </div>
+        );
+    }
+}
+
 
 class LimitedSkillsModule extends Component {
     constructor(props) {
@@ -80,9 +124,9 @@ class LimitedSkillsModule extends Component {
         this.state = {
             categories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
             chosenCategories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
-            list: this.props.list
+            showDescription: false,
+            descriptionFor: ''
         };
-        // this.reRenderModule.bind(this);
     }
 
     reRenderModule = (category) => {
@@ -124,9 +168,31 @@ class LimitedSkillsModule extends Component {
         }
     };
 
+    descriptionRendererMethod = (tech) => {
+        if (this.state.showDescription === true &&
+            this.state.descriptionFor.name === tech) {
+            this.setState({
+                showDescription: false
+            })
+        }
+        else {
+            let chosenTech = {};
+            for (let el of this.props.list) {
+                if (el.name === tech) {
+                    chosenTech = el;
+                    break;
+                }
+            }
+            this.setState({
+                showDescription: true,
+                descriptionFor: chosenTech
+            })
+        }
+    };
+
     render() {
         let filteredList = [];
-        this.state.list.forEach((tech) => {
+        this.props.list.forEach((tech) => {
             let pass = false;
             for (let category of tech.categories) {
                 if (this.state.chosenCategories.indexOf(category) !== -1) {
@@ -141,12 +207,17 @@ class LimitedSkillsModule extends Component {
 
         return (
             <div className='skills-react-container'>
+                <Description show={this.state.showDescription}
+                             technology={this.state.descriptionFor}
+                />
                 <CategoryButtons categories={this.state.categories}
                                  chosen={this.state.chosenCategories}
                                  rerender={this.reRenderModule}
                 />
 
-                <SkillsModule skills={filteredList}/>
+                <SkillsModule skills={filteredList}
+                              descriptionRenderer={this.descriptionRendererMethod}
+                />
 
             </div>
         );
