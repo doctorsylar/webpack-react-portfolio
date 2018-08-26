@@ -8,7 +8,7 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    background: url("../img/prog-bg-1.png") repeat-y;
+    background: url("../img/new-bg.png") repeat-y;
     background-size: contain;
 }
 
@@ -31,7 +31,20 @@ body > *:nth-child(odd) {
     color: #111111;
 }
 h1 {
-    line-height: 34px;
+    font-size: 54px;
+    margin: 24px auto;
+}
+h2 {
+    font-size: 42px;
+    margin: 16px auto;
+}
+h3 {
+    font-size: 32px;
+    margin: 12px auto;
+}
+h4 {
+    font-size: 28px;
+    margin: 6px auto;
 }
 .flex {
     display: flex;
@@ -52,6 +65,7 @@ body > *:first-child {
     padding: 0;
 }
 .head .head-header {
+    background-color: rgba(17, 17, 17, 0.95);
     grid-template-columns: auto auto;
     justify-content: stretch;
     padding: 20px calc(10% + 60px);
@@ -99,10 +113,11 @@ body > *:first-child {
 .head .head-container {
     height: 100%;
     padding: 20vh 0 0;
+    color: #111111;
 }
 @keyframes flashing {
     0% {
-        color: #ffffff;
+        color: #111111;
     }
     100% {
         color: tomato;
@@ -117,21 +132,23 @@ body > *:first-child {
 .head .head-container .scroll-down {
     position: absolute;
     bottom: 50px;
-    left: calc(50% - 47px);
+    left: calc(50% - 30px);
+}
+.head .head-container .scroll-down * {
 }
 .head .head-container .scroll-down p {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .head .head-container .scroll-down > a {
+    color: #111111;
     padding: 14px 22px;
-    border: 1px solid #ffffff;
+    border: 1px solid #111111;
     border-radius: 50%;
     transition: all .3s;
 }
 .head .head-container .scroll-down > a:hover {
-    border-color: #111;
-    background-color: #ffffff;
-    color: #111;
+    background-color: rgba(17, 17, 17, 0.40);
+    color: #ffffff;
 }
 
 /* EDuCATION */
@@ -262,6 +279,30 @@ body > *:first-child {
 #contacts {
 
 }
+#contacts form {
+    margin: auto;
+    width: 50%;
+    flex-direction: column;
+}
+#contacts form .inputs {
+    justify-content: space-between;
+}
+#contacts form .inputs > div {
+    flex-direction: column;
+    width: 30%;
+}
+#contacts form label {
+    text-align: left;
+    margin: 6px 0;
+}
+#contacts form .inputs div input {
+    width: 100%;
+}
+#contacts form textarea {
+    resize: vertical;
+}
+
+
 
 /* FOOTER */
 footer {
@@ -316,6 +357,10 @@ footer .copyright {
 /* tablet */
 @media screen and (max-width: 992px) {
     /* HEAD */
+
+    h1 {
+        font-size: 44px;
+    }
     .head .head-header .toggler {
         display: block;
         font-size: 22px;

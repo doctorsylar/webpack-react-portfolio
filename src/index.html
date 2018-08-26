@@ -42,7 +42,6 @@
         <h1>Добро пожаловать на мой личный веб-сайт</h1>
         <p>Меня зовут <i>Андрей</i> и я <strong>frontend разработчик</strong> из Санкт-Петербурга</p>
         <div class="scroll-down">
-            <p><a href="#education" class="anchor-link">Промотать вниз</a></p>
             <a href="#education" class="anchor-link"><i class="fa fa-angle-down"></i></a>
         </div>
     </div>
@@ -90,6 +89,27 @@
 </div>
 <div id="contacts">
     <h3>Контакты</h3>
+    <h4>Форма обратной связи</h4>
+    <p>Будет работать после запуска сайта на сервере с поддержкой PHP</p>
+    <form method="post" class="flex">
+        <div class="inputs flex">
+            <div class="input-name flex">
+                <label for="callback-name">Ваше имя:</label>
+                <input type="text" name="callback-name" id="callback-name" required="required">
+            </div>
+            <div class="input-email flex">
+                <label for="callback-email">Ваш email:</label>
+                <input type="email" name="callback-email" id="callback-email">
+            </div>
+        </div>
+        <label for="callback-message">Ваше сообщение:</label><br>
+        <textarea name="callback-message"
+                  id="callback-message"
+                  rows="10"
+                  required="required">
+        </textarea>
+
+    </form>
 
 </div>
 <footer>
