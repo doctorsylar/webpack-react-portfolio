@@ -23,7 +23,7 @@ let skillsList = [
     },
     { name: 'Bootstrap 4',
         pictureUrl: 'https://dotnetnuke.nl/Portals/16/EasyDNNNews/18/600600p3764EDNmainbootstrap-social-logo.png',
-        categories: ['CSS', 'JavaScript', 'Frameworks' ],
+        categories: ['CSS', 'Frameworks' ],
         description: 'Bootstrap 4 desc'
     },
     { name: 'React',

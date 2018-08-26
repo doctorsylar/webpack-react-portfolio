@@ -1,8 +1,3 @@
-body {
-    margin: 100px 200px;
-}
-
-
 * {
     box-sizing: border-box;
 }
@@ -250,12 +245,12 @@ body > *:first-child {
 }
 #skills #skills-container .skills {
     margin-top: 30px;
-    grid-template-columns: 17% 17% 17% 17% 17%;
-    justify-content: space-around;
-    grid-row-gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 #skills #skills-container .skills .skill-item {
-
+    width: 15%;
+    margin: 0 30px 30px;
 }
 #skills #skills-container .skills .skill-item img {
     max-width: 100%;

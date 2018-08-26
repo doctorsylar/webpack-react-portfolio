@@ -2,14 +2,6 @@
 import $ from 'jquery';
 
 // PureJS Section
-
-// let menuToggler = document.getElementById('menu-toggler');
-// menuToggler.onclick = function() {
-//     let menuCont = document.querySelector('nav.header-menu');
-//     menuCont.classList.toggle('shown');
-// };
-
-
 // jQuery Section
 
 $(function () {
@@ -28,10 +20,11 @@ $(function () {
         let computedTextContainerName = clickedName + '-information';
         let computedOpenButtonName = clickedName + '-button-open';
         let computedCloseButtonName = clickedName + '-button-close';
-        console.log(computedOpenButtonName);
+        function toggleButtonClass() {
+            $('.edu-container .text-container .edu-button[class~=' + computedOpenButtonName + ']').toggleClass('curved-bottom');
+        }
         $('.edu-container .text-container .edu-information[class~=' + computedTextContainerName + ']').slideToggle('100ms');
-        $('.edu-container .text-container .edu-button[class~=' + computedOpenButtonName + ']').toggleClass('curved-bottom');
-        $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms');
+        $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms', 'linear', toggleButtonClass);
     });
 
     $(window).scroll(function () {

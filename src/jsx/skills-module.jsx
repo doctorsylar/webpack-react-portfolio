@@ -1,30 +1,33 @@
 import React, {Component} from 'react';
+import Transition from 'react-transition-group/Transition';
 
 
 
 function Description (props) {
-    // if (props.show === true) {
         return (
-            <div className={
-                props.show ? 'skill-description flex' : 'skill-description skill-description-hidden'
-            }
+            <Transition in={props.show}
+                        timeout={500}
+                        mountOnEnter={true}
+                        unmountOnExit={true}
+                        appear={true}
+                        enter={true}
+                        exit={true}
             >
-                <img src={props.technology.pictureUrl}
-                     alt={props.technology.name}
-                     key={props.technology.name}
-                     title={props.technology.name} />
-                <div className="skill-description-text">
-                    <h4>{ props.technology.name }</h4>
-                    <p>{ props.technology.description }</p>
-                </div>
-            </div>
+                {(status) => (
+                    <div className={'flex skill-description skill-description-' + status}
+                    >
+                        <img src={props.technology.pictureUrl}
+                             alt={props.technology.name}
+                             key={props.technology.name}
+                             title={props.technology.name} />
+                        <div className="skill-description-text">
+                            <h4>{ props.technology.name }</h4>
+                            <p>{ props.technology.description }</p>
+                        </div>
+                    </div>
+                )}
+            </Transition>
         )
-    // }
-    // else {
-    //     return (
-    //         <div className="blank"></div>
-    //     )
-    // }
 }
 
 class CategoryButtons extends Component {
@@ -110,7 +113,7 @@ class SkillsModule extends Component {
             );
         });
         return (
-            <div className='skills grid'>
+            <div className='skills flex'>
                 { skills }
             </div>
         );
