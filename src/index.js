@@ -3,6 +3,7 @@ import style from './css/style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import script from './js/script';
+import './css/transitions.css';
 import LimitedSkillsModule from './jsx/skills-module.jsx';
 
 let skillsList = [
@@ -12,7 +13,7 @@ let skillsList = [
         description: 'HTML 5 desc'
     },
     { name: 'CSS 3',
-        pictureUrl: './img/css-logo.png',
+        pictureUrl: './img/css-logo.svg',
         categories: ['Basic', 'CSS'],
         description: 'CSS 3 desc'
     },
@@ -35,6 +36,16 @@ let skillsList = [
         pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Vue.js_Logo.svg',
         categories: ['JavaScript', 'Frameworks'],
         description: 'VueJS desc'
+    },
+    { name: 'PHP7',
+        pictureUrl: './img/php.svg',
+        categories: ['Server-side'],
+        description: 'PHP7 desc'
+    },
+    { name: 'NodeJS',
+        pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
+        categories: ['JavaScript', 'Server-side'],
+        description: 'NodeJS desc'
     },
     { name: 'Webpack',
         pictureUrl: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon.png',

@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
-import Transition from 'react-transition-group/Transition';
+import { CSSTransition } from 'react-transition-group';
 
 
 
 function Description (props) {
         return (
-            <Transition in={props.show}
-                        timeout={500}
-                        mountOnEnter={true}
-                        unmountOnExit={true}
-                        appear={true}
-                        enter={true}
-                        exit={true}
+            <CSSTransition in={props.show}
+                           classNames="description"
+                           timeout={800}
+                           unmountOnExit
             >
-                {(status) => (
-                    <div className={'flex skill-description skill-description-' + status}
-                    >
+                {status => (
+                    <div className='description flex'>
                         <img src={props.technology.pictureUrl}
                              alt={props.technology.name}
                              key={props.technology.name}
@@ -26,7 +22,7 @@ function Description (props) {
                         </div>
                     </div>
                 )}
-            </Transition>
+            </CSSTransition>
         )
 }
 
@@ -80,14 +76,23 @@ class SkillItem extends Component {
 
     render() {
         return (
-            <div className='skill-item'>
-                <img src={this.props.pictureUrl}
-                     alt={this.props.name}
-                     key={this.props.name}
-                     title={this.props.name}
-                     onClick={this.descriptionHandler}
-                />
-            </div>
+            <CSSTransition
+                in={this.props.show}
+                classNames="skill-item"
+                timeout={800}
+                unmountOnExit
+            >
+                { status => (
+                    <div className='skill-item flex'>
+                        <img src={this.props.pictureUrl}
+                             alt={this.props.name}
+                             key={this.props.name}
+                             title={this.props.name}
+                             onClick={this.descriptionHandler}
+                        />
+                    </div>
+                )}
+            </CSSTransition>
         );
     }
 }
@@ -108,6 +113,7 @@ class SkillsModule extends Component {
                 <SkillItem pictureUrl={skill.pictureUrl}
                            name={skill.name}
                            key={skill.name}
+                           show={this.props.filteredSkills.indexOf(skill.name) !== -1}
                            descriptionHandler={this.props.descriptionRenderer}
                 />
             );
@@ -125,8 +131,8 @@ class LimitedSkillsModule extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            categories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
-            chosenCategories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Other'],
+            categories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Server-side', 'Other'],
+            chosenCategories: ['All', 'Basic', 'CSS', 'JavaScript', 'Frameworks', 'Server-side', 'Other'],
             showDescription: false,
             descriptionFor: ''
         };
@@ -204,7 +210,7 @@ class LimitedSkillsModule extends Component {
                 }
             }
             if (pass === true) {
-                filteredList.push(tech);
+                filteredList.push(tech.name);
             }
         });
 
@@ -218,8 +224,11 @@ class LimitedSkillsModule extends Component {
                                  rerender={this.reRenderModule}
                 />
 
-                <SkillsModule skills={filteredList}
-                              descriptionRenderer={this.descriptionRendererMethod}
+                <SkillsModule
+                    skills={this.props.list}
+                    techNames={this.state.techNames}
+                    filteredSkills={filteredList}
+                    descriptionRenderer={this.descriptionRendererMethod}
                 />
 
             </div>

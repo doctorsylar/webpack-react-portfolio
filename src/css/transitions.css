@@ -1,0 +1,38 @@
+.description-enter {
+    opacity: 0.01;
+    height: 0;
+}
+.description-enter-active {
+    opacity: 1;
+    height: 200px;
+    transition: opacity 400ms, height 800ms ease-out;
+}
+.description-enter-done {
+    height: 200px;
+}
+.description-exit {
+    opacity: 1;
+    height: 200px;
+}
+.description-exit-active {
+    opacity: 0.01;
+    height: 0;
+    transition: opacity 400ms, height 800ms ease-out;
+}
+
+.skill-item-enter {
+    opacity: 0.01;
+}
+.skill-item-enter-active {
+    opacity: 1;
+    transition: all 800ms;
+}
+.skill-item-enter-done {
+}
+.skill-item-exit {
+    opacity: 1;
+}
+.skill-item-exit-active {
+    opacity: 0.01;
+    transition: all 800ms;
+}
