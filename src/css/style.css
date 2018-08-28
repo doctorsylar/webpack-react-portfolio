@@ -146,6 +146,8 @@ body > *:first-child {
     color: #111111;
     padding: 14px 22px;
     border: 1px solid #111111;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     border-radius: 50%;
     transition: all .3s;
 }
@@ -198,7 +200,9 @@ body > *:first-child {
 
 }
 #education .edu-container .text-container *[class~=curved-both] {
-    border-radius: 50px
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
 
 }
 #education .edu-container .text-container .bachelor {
@@ -272,6 +276,8 @@ body > *:first-child {
 }
 #skills #skills-container .skills .skill-item img {
     max-width: 100%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
     border-radius: 20px;
 }
 /* PORTFOLIO */
@@ -290,7 +296,7 @@ body > *:first-child {
 }
 #contacts form .inputs > div {
     flex-direction: column;
-    width: 30%;
+    width: 45%;
 }
 #contacts form label {
     text-align: left;
@@ -327,6 +333,8 @@ footer .copyright {
     background-color: #ffffff;
     color: #222222;
     border: 2px solid tomato;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
     border-radius: 10%;
     min-height: 0;
 }
