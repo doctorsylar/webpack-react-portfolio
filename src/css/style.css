@@ -8,8 +8,8 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    background: url("../img/new-bg.png") repeat-y;
-    background-size: contain;
+    background: url("../img/new-bg.png") no-repeat top ;
+    background-size: auto;
 }
 
 /* COMMONS */
@@ -85,6 +85,9 @@ body > *:first-child {
     display: none;
     text-align: right;
     color: #ffffff;
+}
+.head .head-header nav {
+    position: relative;
 }
 .head .head-header nav ul {
     list-style: none;
@@ -234,9 +237,6 @@ body > *:first-child {
     width: 60%;
     margin: 0 auto;
 }
-/*#skills #skills-container .skills-react-container .skill-description[class~=skill-description-hidden] {*/
-    /*display: none;*/
-/*}*/
 #skills #skills-container .skills-react-container .description img {
     max-width: 200px;
 }
@@ -267,6 +267,7 @@ body > *:first-child {
 }
 #skills #skills-container .skills .skill-item {
     width: 15%;
+    min-width: 80px;
     margin: 0 30px 30px;
 }
 #skills #skills-container .skills .skill-item img {
@@ -371,15 +372,18 @@ footer .copyright {
         grid-column-start: 1;
         grid-column-end: 3;
         width: 100%;
-        display: none;
-    }
-    .head .head-header nav[class~=shown] {
+        position: relative;
         display: block;
     }
     .head .head-header nav ul {
+        background-color: #111111;
+        width: 100%;
+        top: 19px;
         margin: 2px auto;
         flex-direction: column;
         padding-left: 0;
+        position: absolute;
+        display: none;
     }
     .head .head-header nav ul .menu-item,
     .head .head-header nav ul .menu-item a{
@@ -418,6 +422,9 @@ footer .copyright {
     .head .head-header {
         padding: 15px 30px;
     }
+    .head .head-header nav ul {
+        top: 14px;
+    }
 
     /* HEAD CONTAINER */
     .head .head-container {
@@ -428,11 +435,18 @@ footer .copyright {
 /* smart phone */
 @media screen and (max-width: 576px) {
     /* HEAD */
+    h1 {
+        line-height: 34px;
+    }
+
     .head .head-header {
         padding: 10px 10px;
     }
     .head .head-header .head-logo {
         letter-spacing: 0;
+    }
+    .head .head-header nav ul {
+        top: 9px;
     }
     /* HEAD CONTAINER */
     .head .head-container {

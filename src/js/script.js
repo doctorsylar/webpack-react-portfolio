@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 $(function () {
     $('#menu-toggler').click(function () {
-        $('nav.header-menu').slideToggle("fast");
+        $('nav.header-menu ul').slideToggle("fast");
     });
     $('.anchor-link').click(function (event) {
         event.preventDefault();
