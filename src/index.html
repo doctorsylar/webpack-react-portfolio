@@ -89,28 +89,36 @@
 
 </div>
 <div id="contacts">
-    <h3>Контакты</h3>
-    <h4>Форма обратной связи</h4>
+    <h2>Контакты</h2>
+    <h3>Форма обратной связи</h3>
     <p>Будет работать после запуска сайта на сервере с поддержкой PHP</p>
-    <form method="post" class="flex">
+    <form method="post" class="flex contact-form">
         <div class="inputs flex">
             <div class="input-name flex">
                 <label for="callback-name">Ваше имя:</label>
-                <input type="text" name="callback-name" id="callback-name" required="required">
+                <input type="text" name="callback-name"
+                       id="callback-name" required="required"
+                       placeholder="Имя..."
+                >
             </div>
             <div class="input-email flex">
                 <label for="callback-email">Ваш email:</label>
-                <input type="email" name="callback-email" id="callback-email">
+                <input type="email" name="callback-email"
+                       id="callback-email"
+                       placeholder="Email..."
+                >
             </div>
         </div>
         <label for="callback-message">Ваше сообщение:</label><br>
         <textarea name="callback-message"
                   id="callback-message"
                   rows="10"
-                  required="required">
-        </textarea>
-
+                  placeholder="Ваше сообщение..."
+                  required="required"
+        ></textarea>
+        <input class="form-button" type="submit" value="Отправить">
     </form>
+    <h2 class="contact-decoy">Была произведена отправка формы</h2>
 
 </div>
 <footer>

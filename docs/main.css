@@ -302,14 +302,34 @@ body > *:first-child {
     text-align: left;
     margin: 6px 0;
 }
-#contacts form .inputs div input {
+#contacts form .inputs div input,
+#contacts form textarea {
     width: 100%;
+    padding: 5px;
+}
+#contacts form .inputs div input:focus,
+#contacts form textarea:focus {
+    border-color: dodgerblue;
 }
 #contacts form textarea {
     resize: vertical;
 }
-
-
+#contacts form input.form-button {
+    width: 20%;
+    min-width: 100px;
+    margin: 10px auto;
+    font-family: 'Amatic SC', cursive;
+    line-height: 24px;
+    font-size: 24px;
+    border: 3px inset green;
+    box-shadow: 2px 5px green;
+    -webkit-border-radius: 40%;
+    -moz-border-radius: 40%;
+    border-radius: 40%;
+}
+#contacts h2.contact-decoy {
+    display: none;
+}
 
 /* FOOTER */
 footer {

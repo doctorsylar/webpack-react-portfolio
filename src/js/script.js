@@ -27,6 +27,13 @@ $(function () {
         $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms', 'linear', toggleButtonClass);
     });
 
+    $('form.contact-form').submit(function (event) {
+        event.preventDefault();
+        $('form.contact-form').hide('fast', 'linear', function () {
+            $('h2.contact-decoy').show('slow');
+        })
+    });
+
     $(window).scroll(function () {
         let homeButton = $('#home');
         let scrollPos = window.pageYOffset;
