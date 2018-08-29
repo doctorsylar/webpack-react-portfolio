@@ -18,17 +18,22 @@ let skillsList = [
         description: 'CSS 3 desc'
     },
     { name: 'JavaScript ES6',
-        pictureUrl: 'http://2ality.com/2011/10/logo-js/js.jpg',
+        pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
         categories: ['Basic', 'JavaScript'],
         description: 'JavaScript ES6 desc'
     },
+    { name: 'jQuery',
+        pictureUrl: './img/jquery.svg',
+        categories: ['JavaScript'],
+        description: 'jQuery desc'
+    },
     { name: 'Bootstrap 4',
-        pictureUrl: 'https://dotnetnuke.nl/Portals/16/EasyDNNNews/18/600600p3764EDNmainbootstrap-social-logo.png',
-        categories: ['CSS', 'Frameworks' ],
+        pictureUrl: './img/bootstrap.svg',
+        categories: ['CSS', 'Frameworks'],
         description: 'Bootstrap 4 desc'
     },
     { name: 'React',
-        pictureUrl: 'http://www2.cpttm.org.mo/training/logos/React.svg',
+        pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
         categories: ['JavaScript', 'Frameworks'],
         description: 'React desc'
     },
@@ -48,7 +53,7 @@ let skillsList = [
         description: 'NodeJS desc'
     },
     { name: 'Webpack',
-        pictureUrl: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon.png',
+        pictureUrl: './img/webpack.svg',
         categories: ['Other'],
         description: 'Webpack desc'
     },

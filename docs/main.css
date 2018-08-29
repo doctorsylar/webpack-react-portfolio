@@ -271,11 +271,11 @@ body > *:first-child {
 }
 #skills #skills-container .skills .skill-item {
     width: 15%;
-    min-width: 80px;
+    min-width: 100px;
     margin: 0 30px 30px;
 }
 #skills #skills-container .skills .skill-item img {
-    max-width: 100%;
+    width: 100%;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -463,7 +463,7 @@ footer .copyright {
 /* smart phone */
 @media screen and (max-width: 576px) {
     /* HEAD */
-    h1 {
+    h1, h2, h3 {
         line-height: 34px;
     }
 
@@ -485,8 +485,8 @@ footer .copyright {
         width: 80%;
     }
     /* SKILLS */
-    #skills #skills-container .skills {
-        grid-template-columns: 20% 20% 20% 20%;
+    #skills #skills-container .skills-react-container .description img {
+        max-width: 40%;
     }
 
     /* HOME BUTTON */
@@ -519,19 +519,26 @@ footer .copyright {
 
 .skill-item-enter {
     opacity: 0.01;
+    width: 0% !important;
 }
 .skill-item-enter-active {
     opacity: 1;
+    width: 15% !important;
     transition: all 800ms;
 }
 .skill-item-enter-done {
+    width: 15% !important;
 }
 .skill-item-exit {
     opacity: 1;
+    width: 15% !important;
 }
 .skill-item-exit-active {
     opacity: 0.01;
+    width: 0% !important;
     transition: all 800ms;
 }
+
+
 
 /*# sourceMappingURL=main.css.map*/

@@ -22,17 +22,23 @@
 
 .skill-item-enter {
     opacity: 0.01;
+    width: 0% !important;
 }
 .skill-item-enter-active {
     opacity: 1;
+    width: 15% !important;
     transition: all 800ms;
 }
 .skill-item-enter-done {
+    width: 15% !important;
 }
 .skill-item-exit {
     opacity: 1;
+    width: 15% !important;
 }
 .skill-item-exit-active {
     opacity: 0.01;
+    width: 0% !important;
     transition: all 800ms;
 }
+
