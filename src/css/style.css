@@ -137,8 +137,6 @@ body > *:first-child {
     bottom: 50px;
     left: calc(50% - 30px);
 }
-.head .head-container .scroll-down * {
-}
 .head .head-container .scroll-down p {
     margin-bottom: 20px;
 }
@@ -146,9 +144,12 @@ body > *:first-child {
     color: #111111;
     padding: 14px 22px;
     border: 1px solid #111111;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    border-radius: 50%;
     transition: all .3s;
 }
 .head .head-container .scroll-down > a:hover {
