@@ -20,25 +20,48 @@
     transition: opacity 400ms, height 800ms ease-out;
 }
 
-.skill-item-enter {
+#skills #skills-container .skills .skill-item-enter {
     opacity: 0.01;
-    width: 0% !important;
+    width: 0%;
 }
-.skill-item-enter-active {
+#skills #skills-container .skills .skill-item-enter-active {
     opacity: 1;
-    width: 15% !important;
-    transition: all 800ms;
+    width: 15%;
+    transition: all 500ms;
 }
-.skill-item-enter-done {
-    width: 15% !important;
+#skills #skills-container .skills .skill-item-enter-done {
+    width: 15%;
 }
-.skill-item-exit {
+#skills #skills-container .skills .skill-item-exit {
     opacity: 1;
-    width: 15% !important;
+    width: 15%;
 }
-.skill-item-exit-active {
+#skills #skills-container .skills .skill-item-exit-active {
     opacity: 0.01;
-    width: 0% !important;
-    transition: all 800ms;
+    width: 0%;
+    transition: all 500ms;
 }
 
+@media screen and (max-width: 576px) {
+    #skills #skills-container .skills .skill-item-enter {
+        opacity: 0.01;
+        width: 0%;
+    }
+    #skills #skills-container .skills .skill-item-enter-active {
+        opacity: 1;
+        width: 65%;
+        transition: all 500ms;
+    }
+    #skills #skills-container .skills .skill-item-enter-done {
+        width: 65%;
+    }
+    #skills #skills-container .skills .skill-item-exit {
+        opacity: 1;
+        width: 65%;
+    }
+    #skills #skills-container .skills .skill-item-exit-active {
+        opacity: 0.01;
+        width: 0%;
+        transition: all 500ms;
+    }
+}

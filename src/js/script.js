@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 $(function () {
     $('#menu-toggler').click(function () {
-        $('nav.header-menu ul').slideToggle("fast");
+        $('nav.header-menu > ul').slideToggle("fast");
     });
     $('.anchor-link').click(function (event) {
         event.preventDefault();
@@ -21,17 +21,18 @@ $(function () {
         let computedOpenButtonName = clickedName + '-button-open';
         let computedCloseButtonName = clickedName + '-button-close';
         function toggleButtonClass() {
-            $('.edu-container .text-container .edu-button[class~=' + computedOpenButtonName + ']').toggleClass('curved-bottom');
+            let selector = $('.edu-container .text-container .edu-button[class~=' + computedOpenButtonName + ']');
+            selector.toggleClass('curved-bottom');
+            if (!clicked.classList.contains('curved-bottom') && !clicked.classList.contains('square-bottom')) {
+                selector.toggleClass('square-bottom');
+            }
+            else if (clicked.classList.contains('curved-bottom') && clicked.classList.contains('square-bottom')) {
+                selector.toggleClass('square-bottom');
+            }
         }
         $('.edu-container .text-container .edu-information[class~=' + computedTextContainerName + ']').slideToggle('100ms');
-        $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms', 'linear', toggleButtonClass);
-    });
-
-    $('form.contact-form').submit(function (event) {
-        event.preventDefault();
-        $('form.contact-form').hide('fast', 'linear', function () {
-            $('h2.contact-decoy').show('slow');
-        })
+        $('.edu-container .text-container .edu-button[class~=' + computedCloseButtonName + ']').slideToggle('100ms', 'linear');
+        toggleButtonClass();
     });
 
     $(window).scroll(function () {

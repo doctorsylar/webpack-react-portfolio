@@ -50,7 +50,7 @@
         <div class="text-container flex">
             <h3>Университет ИТМО</h3>
             <div class="edu-bachelor">
-                <h4 class="curved-top">Этапы образования:</h4>
+                <h4 class="curved-top">Этапы обучения:</h4>
                 <span class="bachelor edu-button bachelor-button-open">Bachelor</span>
                 <div class="edu-information bachelor-information">
                     <p>Год окончания: 2015</p>
@@ -87,39 +87,37 @@
 </div>
 <div id="portfolio">
     <h2>Портфолио</h2>
+    abcdefg
 </div>
 <div id="contacts">
     <h2>Контакты</h2>
     <h3>Форма обратной связи</h3>
     <p>Будет работать после запуска сайта на сервере с поддержкой PHP</p>
-    <form method="post" class="flex contact-form">
+    <form method="post" class="flex" id="callback-form">
         <div class="inputs flex">
             <div class="input-name flex">
                 <label for="callback-name">Ваше имя:</label>
-                <input type="text" name="callback-name"
-                       id="callback-name" required="required"
-                       placeholder="Имя..."
-                >
+                <input type="text" name="callback-name" id="callback-name"
+                       required="required" placeholder="Имя...">
             </div>
             <div class="input-email flex">
                 <label for="callback-email">Ваш email:</label>
                 <input type="email" name="callback-email"
-                       id="callback-email"
-                       placeholder="Email..."
-                >
+                       id="callback-email" placeholder="E-mail...">
             </div>
         </div>
-        <label for="callback-message">Ваше сообщение:</label><br>
+        <label for="callback-message">Ваше сообщение:</label>
         <textarea name="callback-message"
                   id="callback-message"
                   rows="10"
-                  placeholder="Ваше сообщение..."
                   required="required"
+                  placeholder="Сообщение..."
         ></textarea>
-        <input class="form-button" type="submit" value="Отправить">
+        <input class="form-button" type="submit" value="Отправить"
+               id="callback-submit"
+        >
     </form>
     <h2 class="contact-decoy">Была произведена отправка формы</h2>
-
 </div>
 <footer>
     <span class="copyright">©2018 Andrey Izotov</span>
