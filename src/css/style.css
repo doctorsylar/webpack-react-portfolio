@@ -8,7 +8,6 @@ body {
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    background: url("../img/new-bg.png") no-repeat top ;
     background-size: auto;
 }
 
@@ -17,13 +16,13 @@ a {
     text-decoration: none;
     color: #ffffff;
 }
-body > * {
-    padding: 0 10%;
-    min-height: 100vh;
+body > header,
+body > div {
+    padding: 0 10% 100px;
     overflow: hidden;
 }
 body > *:nth-child(even) {
-    background-color: #111111;
+    background-color: #333333;
     color: #ffffff;
 }
 body > *:nth-child(odd) {
@@ -32,19 +31,20 @@ body > *:nth-child(odd) {
 }
 h1 {
     font-size: 54px;
-    margin: 24px auto;
+    margin: 32px auto;
+
 }
 h2 {
     font-size: 42px;
-    margin: 16px auto;
+    margin: 26px auto;
 }
 h3 {
     font-size: 32px;
-    margin: 12px auto;
+    margin: 16px auto;
 }
 h4 {
     font-size: 28px;
-    margin: 6px auto;
+    margin: 8px auto;
 }
 .flex {
     display: flex;
@@ -57,15 +57,16 @@ h4 {
 }
 
 /* HEADER */
-body > *:first-child {
-    background-color: transparent;
+body > header {
+    background: url("../img/new-bg.png") no-repeat top;
+    min-height: 100vh;
 }
 .head {
     position: relative;
     padding: 0;
 }
 .head .head-header {
-    background-color: rgba(17, 17, 17, 0.95);
+    background-color: #333333ff;
     grid-template-columns: auto auto;
     justify-content: space-between;
     padding: 20px calc(10% + 60px);
@@ -210,23 +211,6 @@ body > *:first-child {
         border-bottom-right-radius: 0;
     }
 }
-/*@keyframes bottom-block-extends {*/
-/*0% {*/
-/*border-radius: 0;*/
-/*}*/
-/*100% {*/
-
-/*}*/
-/*}*/
-/*@keyframes bottom-block-retracts {*/
-/*0% {*/
-
-/*}*/
-/*100% {*/
-
-/*}*/
-/*}*/
-
 #education .edu-container .text-container *[class~=curved-top] {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -236,14 +220,8 @@ body > *:first-child {
     animation: top-block-extends 0.2s linear 0s 1 forwards;
 }
 #education .edu-container .text-container *[class~=square-bottom] {
-    animation: top-block-retracts 0.2s linear 0s 1 forwards;
+    animation: top-block-retracts 0.3s linear 0s 1 forwards;
 }
-/*#education .edu-container .text-container *[class~=curved-both] {*/
-/*-webkit-border-radius: 50px;*/
-/*-moz-border-radius: 50px;*/
-/*border-radius: 50px;*/
-
-/*}*/
 #education .edu-container .text-container .bachelor {
     background-color: tomato;
 }
@@ -299,6 +277,7 @@ body > *:first-child {
 }
 #skills #skills-container .skills-react-container span[class~=active] {
     background-color: #505050;
+    color: #FFFFFF;
 }
 #skills #skills-container .skills-react-container span:hover {
     background-color: #757575;
@@ -310,7 +289,6 @@ body > *:first-child {
 }
 #skills #skills-container .skills .skill-item {
     width: 15%;
-    /*min-width: 100px;*/
     margin: 0 30px 30px;
 }
 #skills #skills-container .skills .skill-item img {
@@ -322,9 +300,53 @@ body > *:first-child {
 }
 /* PORTFOLIO */
 #portfolio {
-    color: yellow;
-}
+    padding: 0 3% 100px;
 
+}
+#portfolio .carousel-container {
+    display: flex;
+}
+#portfolio .carousel-container .carousel-control {
+    opacity: 0.1;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 50px;
+}
+#portfolio .carousel-container .carousel-control:hover {
+    opacity: 0.4;
+    color: #FFFFFF;
+    background-color: #222222;
+}
+#portfolio .carousel-container .portfolio-carousel {
+    width: 90%;
+}
+#portfolio .carousel-container .portfolio-carousel .item {
+    display: flex;
+    height: 100%;
+}
+#portfolio .carousel-container .portfolio-carousel .item .picture {
+    width: 80%;
+}
+#portfolio .carousel-container .portfolio-carousel .item .picture img {
+    height: 100%;
+}
+#portfolio .carousel-container .portfolio-carousel .item .text-area {
+    width: 20%;
+    background-color: #111111;
+    text-align: left;
+    padding: 10px;
+}
+#portfolio .carousel-container .portfolio-carousel .item .text-area p.section {
+    color: tomato;
+}
+#portfolio .carousel-container .portfolio-carousel .item .text-area p.inner-text {
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 20px;
+}
 /* CONTACTS */
 #contacts {
 
@@ -345,6 +367,10 @@ body > *:first-child {
     text-align: left;
     margin: 6px 0;
 }
+#contacts form label[class~=required]::after {
+    content: ' *';
+    color: red;
+}
 #contacts form .inputs div input,
 #contacts form textarea {
     width: 100%;
@@ -360,15 +386,22 @@ body > *:first-child {
 #contacts form input.form-button {
     width: 20%;
     min-width: 100px;
-    margin: 10px auto;
+    margin: 30px auto;
     font-family: 'Amatic SC', cursive;
     line-height: 24px;
     font-size: 24px;
-    border: 3px inset green;
-    box-shadow: 2px 5px green;
-    -webkit-border-radius: 40%;
-    -moz-border-radius: 40%;
-    border-radius: 40%;
+    border: 1px solid green;
+    -webkit-border-radius: 50px;
+    -moz-border-radius:  50px;
+    border-radius:  50px;
+    background-color: green;
+
+    color: #ffffff;
+    padding: 10px;
+}
+#contacts form input.form-button:hover {
+    background-color: #FFFFFF;
+    color: green;
 }
 #contacts h2.contact-decoy {
     display: none;
@@ -400,6 +433,7 @@ footer .copyright {
     -moz-border-radius: 10%;
     border-radius: 10%;
     min-height: 0;
+    z-index: 10;
 }
 #home:hover {
     background-color: crimson;
@@ -425,11 +459,14 @@ footer .copyright {
     .head .head-container {
         padding: 250px 0 120px;
     }
+    /* PORTFOLIO */
+    #portfolio {
+        padding: 0 1% 100px;
+    }
 }
 /* tablet */
 @media screen and (max-width: 992px) {
     /* HEAD */
-
     h1 {
         font-size: 44px;
     }
@@ -483,6 +520,22 @@ footer .copyright {
     #education .edu-container > div {
         width: 100%;
     }
+    /* PORTFOLIO */
+    #portfolio .carousel-container .portfolio-carousel {
+        width: 100%;
+    }
+    #portfolio .carousel-container .carousel-control {
+        display: none;
+    }
+    #portfolio .carousel-container .portfolio-carousel .item {
+        flex-direction: column;
+    }
+    #portfolio .carousel-container .portfolio-carousel .item .picture {
+        width: 100%;
+    }
+    #portfolio .carousel-container .portfolio-carousel .item .text-area {
+        width: 100%;
+    }
 
 }
 /* note */
@@ -501,6 +554,7 @@ footer .copyright {
     .head .head-container {
         padding: 150px 0 70px;
     }
+
     /* EDU */
     #skills #skills-container .skills-react-container .description {
         width: 75%;
@@ -547,6 +601,10 @@ footer .copyright {
     }
     #skills #skills-container .skills .skill-item {
         width: 65%;
+    }
+    /* CONTACTS */
+    #contacts form {
+        width: 85%;
     }
 
     /* HOME BUTTON */

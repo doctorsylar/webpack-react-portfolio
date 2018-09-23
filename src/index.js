@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import script from './js/script';
 import './css/transitions.css';
+import 'owl.carousel2/dist/assets/owl.carousel.css';
 import LimitedSkillsModule from './jsx/skills-module.jsx';
 
 let skillsList = [
